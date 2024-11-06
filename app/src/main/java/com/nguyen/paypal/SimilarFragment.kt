@@ -13,8 +13,8 @@ class SimilarFragment : Fragment(R.layout.fragment_similar) {
         super.onViewCreated(view, savedInstanceState)
 
         val movies = mutableListOf<Movie>()
-        val similarAdapter = SimilarAdapter(movies)
-        FragmentSimilarBinding.bind(view).viewpager.adapter = similarAdapter
+        val adapter = SimilarAdapter(movies)
+        FragmentSimilarBinding.bind(view).similar.adapter = adapter
 
         val args: SimilarFragmentArgs by navArgs()
         val viewModel : SimilarViewModel by viewModels()
@@ -22,7 +22,7 @@ class SimilarFragment : Fragment(R.layout.fragment_similar) {
         viewModel.movies.observe(requireActivity()) {
             movies.clear()
             movies.addAll(it)
-            similarAdapter.notifyDataSetChanged()
+            adapter.notifyDataSetChanged()
         }
     }
 }
