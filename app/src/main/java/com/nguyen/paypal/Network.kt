@@ -1,5 +1,6 @@
 package com.nguyen.paypal
 
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,7 +13,8 @@ object Network {
             .build()
     val service: MovieService by lazy { retrofit.create(MovieService::class.java) }
 
-    suspend fun getNowPlaying(): List<Movie> = service.getNowPlaying(API_KEY).results
+    suspend fun getNowPlaying(): Movies = service.getNowPlaying(API_KEY)
+    fun getNowPlaying2(): Call<Movies> = service.getNowPlaying2(API_KEY)
 
     suspend fun getSimilar(movieId: Int): List<Movie> = service.getSimilar(movieId, API_KEY).results
 }

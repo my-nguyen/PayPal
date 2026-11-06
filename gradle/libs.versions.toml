@@ -1,6 +1,6 @@
 [versions]
-agp = "8.5.1"
-kotlin = "1.9.0"
+agp = "9.4.1"
+kotlin = "2.2.10"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -15,7 +15,7 @@ gson = "2.11.0"
 activity-ktx = "1.9.3"
 glide = "4.16.0"
 picasso = "2.8"
-safeargs = "2.8.3"
+safeargs = "2.9.6"
 navigationFragmentKtx = "2.8.3"
 navigationUiKtx = "2.8.3"
 

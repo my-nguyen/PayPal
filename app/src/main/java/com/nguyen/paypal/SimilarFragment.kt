@@ -18,11 +18,11 @@ class SimilarFragment : Fragment(R.layout.fragment_similar) {
 
         val args: SimilarFragmentArgs by navArgs()
         val viewModel : SimilarViewModel by viewModels()
-        viewModel.getSimilar(args.movieId)
         viewModel.movies.observe(requireActivity()) {
             movies.clear()
             movies.addAll(it)
             adapter.notifyDataSetChanged()
         }
+        viewModel.getSimilar(args.movieId)
     }
 }
